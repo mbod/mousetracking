@@ -1,0 +1,33 @@
+---
+title: "Mouse Tracking Data Analysis"
+output: html_notebook
+---
+
+```{r echo=FALSE}
+library(mousetrap)
+library(ggplot2)
+```
+
+# 1. Load datasheet
+
+```{r}
+
+df <- read.csv('Political_Points__22417.csv', stringsAsFactors = FALSE)
+
+colnames(df)
+
+```
+
+### As an example take one set of mouse tracking data for each participant
+
+* `P1time`, `P1xPos` and `P1yPos`
+* row 4 onwards are MTurk responses
+
+```{r}
+
+df2 <- df[-c(1:3),]
+
+strsplit(df2[12,]$C1yPos,',')
+
+
+```
